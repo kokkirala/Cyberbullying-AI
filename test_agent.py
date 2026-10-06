@@ -20,3 +20,4 @@ for text in test_cases:
     print("REASON:", result.get("reason", "No concern detected."))
     print("TOXICITY:", round(result["toxicity_score"], 3))
     print("CONTEXT:", round(result["context_score"], 3))
+    print("GUIDANCE:", result["guidance"])

@@ -235,11 +235,11 @@ def agent(text):
     )
 
 
+
     prompt = f"""
-You are a helpful cyberbullying support assistant.
+You are a supportive cyberbullying safety assistant.
 
-A user provided this statement:
-
+User input:
 {text}
 
 AI analysis:
@@ -250,25 +250,33 @@ Toxicity score:
 Cyberbullying context score:
 {context_score:.3f}
 
-Relevant knowledge:
+Context rule signal:
+{context_signal}
+
+Relevant safety knowledge:
 {context}
 
-Provide a short, supportive response.
+Your task is to provide short, practical, and supportive safety guidance.
 
 Important rules:
 
-- Do not encourage retaliation.
-- Do not encourage harassment.
+- Do not decide that the user is legally a victim of cyberbullying.
 - Do not make legal conclusions.
-- Do not automatically say that the situation is legally cyberbullying.
-- Consider context, targeting, repetition, threats, and severity.
-- If the user appears to be describing harassment happening to them,
-  respond supportively and suggest practical safety steps.
-- If the input is simply a toxic comment, explain that the language
-  may be harmful.
-- Keep the response clear and simple.
+- Do not encourage retaliation, revenge, harassment, or confrontation.
+- Do not shame or blame the user.
+- Consider targeting, repetition, threats, harassment, and severity.
+- If the user appears to be experiencing harassment or repeated targeting,
+  acknowledge the concern and suggest practical steps such as blocking,
+  reporting, saving evidence, and seeking help from a trusted person.
+- If the input is mainly toxic or insulting language, explain briefly
+  that the language may be harmful and suggest respectful communication.
+- If there is no clear indication that the user is being targeted,
+  avoid assuming that cyberbullying is occurring.
+- Use the provided knowledge when relevant.
+- Do not mention internal model details, scores, RAG, or AI analysis
+  in the response.
+- Keep the response concise, clear, calm, and supportive.
 """
-
 
     response = llm.invoke(prompt)
 
