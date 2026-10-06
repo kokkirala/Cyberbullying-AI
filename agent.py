@@ -294,21 +294,19 @@ Important rules:
 # Test the agent
 # ============================================
 
-text = input(
-    "Enter a comment or situation: "
-)
+if __name__ == "__main__":
+    text = input("Enter a comment or situation: ")
 
-result = agent(text)
+    result = agent(text)
 
+    print("\nRESULT:")
+    print(result["result"])
 
-print("\nRESULT:")
-print(result["result"])
+    print("\nTOXICITY SCORE:")
+    print(result["toxicity_score"])
 
-print("\nTOXICITY SCORE:")
-print(result["toxicity_score"])
+    print("\nCYBERBULLYING CONTEXT SCORE:")
+    print(result["context_score"])
 
-print("\nCYBERBULLYING CONTEXT SCORE:")
-print(result["context_score"])
-
-print("\nAI GUIDANCE:")
-print(result["guidance"])
+    print("\nAI GUIDANCE:")
+    print(result["guidance"])
