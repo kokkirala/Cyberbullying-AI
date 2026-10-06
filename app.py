@@ -52,13 +52,7 @@ def analyze(text):
 # ============================================
 
 with gr.Blocks(
-    title="Cyberbullying AI",
-    css="""
-    .gradio-container {
-        max-width: 1000px !important;
-        margin: auto !important;
-    }
-    """
+    title="Cyberbullying AI"
 ) as demo:
 
     gr.Markdown("""
@@ -121,5 +115,11 @@ if __name__ == "__main__":
 
     demo.launch(
         server_name="127.0.0.1",
-        server_port=7860
+        server_port=7860,
+        css="""
+        .gradio-container {
+        max-width: 1000px !important;
+        margin: auto !important;
+        }
+        """
     )
