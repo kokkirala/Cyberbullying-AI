@@ -47,8 +47,6 @@ def analyze(text):
         f"**Cyberbullying context score:** `{result['context_score']:.3f}`",
         result["guidance"]
     )
-
-
 # ============================================
 # Gradio interface
 # ============================================

@@ -202,6 +202,7 @@ def agent(text):
 
     toxicity_detected = toxicity_score >= 0.5
     context_signal = detect_context_signal(text)
+    print(f"[Agent] Context rule signal: {context_signal}")
     context_detected = context_score >= 0.80 or context_signal
 
 
@@ -274,18 +275,24 @@ Important rules:
 
     if toxicity_detected and context_detected:
         result = "Potential toxic language and cyberbullying context detected."
-
+        reason = "Both toxic language and cyberbullying context were detected."
     elif context_detected:
         result = "Potential cyberbullying context detected."
-
+        if context_signal:
+            reason = "Cyberbullying context detected through the context rule signal."
+        else:
+            reason = "Cyberbullying context detected by the context model."
     else:
         result = "Potentially harmful/toxic language detected."
+        reason = "Toxic language was detected by the toxicity model."
 
 
     return {
         "toxicity_score": toxicity_score,
         "context_score": context_score,
+        "context_signal": context_signal,
         "result": result,
+        "reason": reason,
         "guidance": response.content
     }
 
