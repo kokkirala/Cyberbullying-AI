@@ -56,6 +56,8 @@ Toxicity Model        Context Model
 
 TensorFlow on native Windows uses CPU execution in this setup; GPU support may require a different environment.
 
+The trained models, tokenizer, and context-training dataset must be present at the paths expected by the application. The application also requires the ChromaDB knowledge base, which can be created by running `python build_rag.py`.
+
 ## Installation
 
 Clone the repository and enter its directory:
@@ -143,6 +145,12 @@ Cyberbullying-AI/
 ├── requirements.txt
 └── README.md
 ```
+
+## Project Status
+
+The application and its main test scripts have been run locally. The system combines trained machine-learning models, rule-based context signals, retrieval-augmented generation, and a locally hosted language model.
+
+Testing on sample inputs does not guarantee accurate results for every real-world situation. Further evaluation on diverse, independently labeled data is needed to measure reliability.
 
 ## Limitations and Safety
 
