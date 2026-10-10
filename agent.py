@@ -292,6 +292,13 @@ Important rules:
 3. If the message describes someone experiencing repeated harassment,
    threats, or targeting:
    - Acknowledge the described situation without assuming details.
+   - Do not assume harassment happened online unless the user explicitly
+     mentions a digital setting, such as social media, messages, or a
+     group chat.
+   - If the setting is unclear, give advice that applies both online
+     and in person. Make online-specific steps conditional, for example:
+     "If this happened online, save screenshots, block or mute the person,
+     and report the content through the platform."
    - Suggest relevant steps such as saving evidence, blocking or muting,
      reporting the content, and seeking help from a trusted person.
    - Do not assume the behavior occurred online if this is unclear.
