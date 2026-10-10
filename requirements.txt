@@ -1,10 +1,6 @@
-pandas
-scikit-learn
-tensorflow
-gradio
-chromadb
-langchain
-langchain-community
-langchain-text-splitters
-langchain-ollama
-datasets
+pandas==3.0.6
+scikit-learn==1.9.1
+tensorflow==2.21.0
+gradio==6.29.1
+chromadb==1.5.9
+langchain-ollama==1.1.0
