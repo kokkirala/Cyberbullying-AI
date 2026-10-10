@@ -136,10 +136,31 @@ def retrieve_knowledge(text):
 # ============================================
 # Simple contextual signal detection
 # ============================================
-
 def detect_context_signal(text):
-
     text = text.lower()
+
+    online_words = [
+        "online",
+        "on social media",
+        "on the internet",
+        "in a group chat",
+        "group chat",
+        "text messages",
+        "private messages",
+        "dm me",
+        "dms",
+        "comments",
+        "posts",
+        "cyberbullying",
+        "cyber bully",
+        "sent me messages",
+        "keeps messaging",
+        "keeps sending messages",
+        "online harassment",
+	"sending me threatening messages",
+        "sending threatening messages",
+        "threatening messages"
+    ]
 
     harassment_words = [
         "harass",
@@ -161,17 +182,20 @@ def detect_context_signal(text):
         "constantly"
     ]
 
+    has_online_context = any(
+        phrase in text for phrase in online_words
+    )
+
     has_harassment = any(
-        word in text
-        for word in harassment_words
+        word in text for word in harassment_words
     )
 
     has_repetition = any(
-        word in text
-        for word in repetition_words
+        word in text for word in repetition_words
     )
 
-    return has_harassment and has_repetition
+    return has_online_context and has_harassment and has_repetition
+
 
 # ============================================
 # AI Agent
